@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+/* setup to use css variables */
+/* this allows to easily adjust the color and radius (roundness of elements. ) */
+:root {
+  --primary-color: #ffa64d;
+  --border-radius: 5px;
+}
+
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: karla, san-serif;
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23fcfbfd' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M11 0l5 20H6l5-20zm42 31a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM0 72h40v4H0v-4zm0-8h31v4H0v-4zm20-16h20v4H20v-4zM0 56h40v4H0v-4zm63-25a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM53 41a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-30 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-28-8a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zM56 5a5 5 0 0 0-10 0h10zm10 0a5 5 0 0 1-10 0h10zm-3 46a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm10 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM21 0l5 20H16l5-20zm43 64v-4h-4v4h-4v4h4v4h4v-4h4v-4h-4zM36 13h4v4h-4v-4zm4 4h4v4h-4v-4zm-4 4h4v4h-4v-4zm8-8h4v4h-4v-4z'/%3E%3C/g%3E%3C/svg%3E");
+
+}
+
+h1 {
+  color: white;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  width: 275px;
+  margin: 20px auto 10px;
+  user-select: none;
+
+}
+
+h1:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* bookmarks */
+.container {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.item {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 10px;
+}
+
+.item:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+a {
+  font-size: 20px;
+  font-weight: bold
+  text-transform: uppercase;
+}
+
+/* change anchor params */
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;  /* turn off underline */
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+/* align delete button */
+.fa-times-circle {
+  float: right;      /* shift right */
+  cursor: pointer;  /* make sure looks like a button */
+  z-index: 2;   /* stay on top */
+}
+.name {
+  margin-top: 20px;    /* give it more space */
+  margin-right: 20px;
+}
+
+/* resize favicon and align with text */
+.name img {
+  height: 20px;
+  width: 20px;
+  vertical-align: sub;  /* cause image to align with text */
+  margin-right: 5px;
+}
+
+/* Modal */
+.modal-container {
+  background : rgba(0), 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;     /* set 0,0,0,0 to take up entire page */
+  left: 0;
+  right: 0;
+  bottom:0;
+}
+/* because .show-modal is below .modal-container it overrides display to flex */
+.show-modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  max-width: 95%;
+  width: 500px;
+  animation: modalopen 2s;
+}
+/* create animation */
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.close-icon {
+  float: right;
+  color: white;
+  font-size: 24px;
+  position: relative;
+  top: 13px;
+  right: 13px;
+  cursor: pointer;
+}
+
+.modal-header {
+  background: var(--primary-color);
+  color: white;
+  padding: 15px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.modal-content {
+  padding: 20px;
+  background: whitesmoke;
+}
+
+/* style form */
+.form-group {
+  height: 55px;
+}
+.form-input {
+  width: 97%;
+  padding: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  display: block;
+  outline: none;
+}
+.form-label {
+  color: var(--primary-color);
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  background: var(--primary-color);
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+button:hover {
+  filter: brightness(110%);
+}
+button:focus {
+  outline: none;
+}
+
+/* Media Query : Large Smartphone (vertical) */
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+}

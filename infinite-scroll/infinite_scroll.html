@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite Scroll</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="infinite_scroll.css">
+</head>
+<body>
+  <div id="pageBorder" >
+    <div class="inside-border" >
+
+        <!-- Title -->
+        <br>
+        <h1>Infinite Image Scroll</h1>
+
+        <!-- ============================================== -->
+        <!-- Debug Note:  comment loader div, uncomment images to restyle page
+        If you don't you will hit the max image limit of unsplash and not be
+        able to load images for 24 hours.  Maybe find alternative. -->
+        <!-- ============================================== -->
+
+        <!-- Loader -->
+        <div class="loader" id="loader">
+          <img src="loader.svg" alt="Loading">
+        </div>
+
+        <!-- images -->
+        <div class="image-container" id="image-container">
+          <!-- <img src="test_image_creek_bridge.jpeg" alt="">
+          <img src="test_image_creek_bridge.jpeg" alt="">
+          <img src="test_image_creek_bridge.jpeg" alt="">
+          <img src="test_image_creek_bridge.jpeg" alt="">
+          <img src="test_image_creek_bridge.jpeg" alt=""> -->
+        </div>
+
+      </div>
+  </div>
+
+  <!-- <script -->
+  <script src="infinite_scroll.js"></script>
+</body>
+</html>
