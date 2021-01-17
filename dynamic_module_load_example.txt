@@ -1,0 +1,13 @@
+
+
+
+if (choice = choices[plyayerChoice]) {
+	// dynamic import using promise
+	import('./confetti.js')
+		.then((module)) => {
+			module.startConfetti();
+			resultText.textContent = 'You Won!';
+			playerScoreNumber++;
+			playerScoreEl.textContent = playerScoreNumber;
+		}
+}
